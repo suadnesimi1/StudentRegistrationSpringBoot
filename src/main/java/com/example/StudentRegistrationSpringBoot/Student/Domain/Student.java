@@ -3,6 +3,7 @@ package com.example.StudentRegistrationSpringBoot.Student.Domain;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -10,23 +11,25 @@ import java.util.Date;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int studentid;
+    private int id;
     private String name;
     private String surname;
+
+    private String studentNumber;
     private String email;
 
-    private Date birthday;
+    private LocalDate birthday;
 
     public Student(){
 
     }
 
-    public int getStudentId() {
-        return studentid;
+    public int getId() {
+        return id;
     }
 
-    public void setStudentId(int  studentId) {
-        this.studentid = studentId;
+    public void setId(int  studentId) {
+        this.id = studentId;
     }
 
     public String getName() {
@@ -44,6 +47,13 @@ public class Student {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public void setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
+    }
 
     public String getEmail() {
         return email;
@@ -53,11 +63,11 @@ public class Student {
         this.email = email;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
